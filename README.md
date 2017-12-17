@@ -6,23 +6,23 @@ Welcome!
 
 You can initiliaze the api client with:
 
-```marvel = Marvel::Api::Client.new(apikey: keys['apikey'], private_key: keys['private_key'])```
+    marvel = Marvel::Api::Client.new(apikey: keys['apikey'], private_key: keys['private_key'])
 
 Then request a list of characters with:
 
-```marvel.characters```
+    marvel.characters
 
 The above list can be paginated with:
 
-`characters = marvel.characters`
+    characters = marvel.characters
 
-`next_characters = characters.next`
+    next_characters = characters.next
 
-`previous_characters = characters.prev`
+    previous_characters = characters.prev
 
 Request a specific character with:
 
-```marvel.character(id)```
+    marvel.character(id)
 
 
 ## Installation
