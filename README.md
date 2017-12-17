@@ -2,6 +2,29 @@
 
 Welcome!
 
+## Usage
+
+You can initiliaze the api client with:
+
+```marvel = Marvel::Api::Client.new(apikey: keys['apikey'], private_key: keys['private_key'])```
+
+Then request a list of characters with:
+
+```marvel.characters```
+
+The above list can be paginated with:
+
+`characters = marvel.characters`
+
+`next_characters = characters.next`
+
+`previous_characters = characters.prev`
+
+Request a specific character with:
+
+```marvel.character(id)```
+
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -17,28 +40,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install marvel-api
-
-## Usage
-
-You can initiliaze the api client with:
-
-`marvel = Marvel::Api::Client.new(apikey: keys['apikey'], private_key: keys['private_key'])`
-
-Then request a list of characters with:
-
-`marvel.characters`
-
-The above list can be paginated with:
-
-`characters = marvel.characters`
-
-`next_characters = characters.next`
-
-`previous_characters = characters.prev`
-
-Request a specific character with:
-
-`marvel.character(id)`
 
 ## Development
 
