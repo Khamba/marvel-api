@@ -28,7 +28,7 @@ One question I thought upon was should List and Resource inherit from Client. In
 
 For testing either Rspec and Minitest is fine. I chose to go with minitest. The VCR and Webhook gems ensure caching of API calls so that I do not go out of my quota limit.
 
-The apikey and private_key are stored in test/fixtures/keys.yml file.
+The apikey and private_key are stored in test/fixtures/keys.yml file which is git ignored.
 
 The custom errors are defined in api/errors.rb
 
