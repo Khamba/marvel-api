@@ -7,7 +7,7 @@ describe Marvel::Api::Client do
   end
 
   def test_base_uri
-    Marvel::Api::Client.base_uri.must_equal 'https://gateway.marvel.com/v1/public'
+    Marvel::Api::Client.base_uri.must_equal 'http://gateway.marvel.com/v1/public'
   end
 
   def test_new_raises_error_on_no_keys

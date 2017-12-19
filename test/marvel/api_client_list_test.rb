@@ -34,7 +34,7 @@ describe Marvel::Api::List do
   end
 
   it "can paginate #prev" do
-    @characters.prev.must_be_kind_of Marvel::Api::List
+    @characters.next.prev.must_be_kind_of Marvel::Api::List
   end
 
 end
