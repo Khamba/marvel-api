@@ -16,17 +16,17 @@ describe Marvel::Api::List do
 
   it "has default limit" do
     @characters.limit.must_be_kind_of Integer
-    @characters.limit.must_equal @characters['limit'].to_i
+    @characters.limit.must_equal @characters['data']['limit'].to_i
   end
 
   it "has default offset" do
     @characters.offset.must_be_kind_of Integer
-    @characters.offset.must_equal @characters['offset'].to_i
+    @characters.offset.must_equal @characters['data']['offset'].to_i
   end
 
   it "has default total" do
     @characters.total.must_be_kind_of Integer
-    @characters.total.must_equal @characters['total'].to_i
+    @characters.total.must_equal @characters['data']['total'].to_i
   end
 
   it "can paginate #next" do

@@ -10,7 +10,7 @@ module Marvel
     class Client
       include HTTParty
       format :json
-      base_uri 'https://gateway.marvel.com/v1/public/'
+      base_uri 'http://gateway.marvel.com/v1/public/'
 
       attr_reader :apikey, :private_key
 
@@ -32,7 +32,7 @@ module Marvel
 
       private
 
-        def send_request(path, options={}, format=:json)
+        def send_request(path, options, format=:json)
           timestamp = Time.now.to_s
           options.merge!(ts: timestamp, hash: hash(timestamp), apikey: @apikey)
           response = self.class.get(path, query: options, format: format)

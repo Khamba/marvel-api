@@ -2,9 +2,9 @@ Hi!
 
 This gem is made with the following thoughts in mind:
 
-1) Easy to extend - Currently there is support for only /characters and /character/:id apis. But adding support for others shoud be easy.
+1) Easy to extend - Currently there is support for only /characters and /character/:id apis. But adding support for others is easy.
 
-2) Testing - Robust and easy testing with Minitest, VCR and Webmock. The testing should be fast (api calls should be cached), but the code should not be so complex that it not maintainable.
+2) Testing - Robust and easy testing with Minitest, VCR and Webmock. The testing should be fast (api calls should be cached), but the code should not be so complex that it unmaintainable.
 
 The Marvel API documentation can be found here:
 
@@ -24,7 +24,7 @@ The actual API call is made by class Marvel::Api::Client which what the gem user
 
 The common methods for both the Resource and List are handled by Client like send_request() and hash()
 
-One question I thought upon was should List and Resource inherit from Client. In the end, I couldn't find a good enough reason for them to. What methods of Client will they be using? They will be having their own responsibility which is quite different from Client' responsibilty. Neither does it make lexical sense.
+One question I thought upon was should List and Resource inherit from Client. In the end, I couldn't find a good enough reason for them to. What methods of Client will they be using? They will be having their own responsibility which is quite different from Client's responsibilty. Neither does it make lexical sense.
 
 For testing either Rspec and Minitest is fine. I chose to go with minitest. The VCR and Webhook gems ensure caching of API calls so that I do not go out of my quota limit.
 
@@ -32,6 +32,6 @@ The apikey and private_key are stored in test/fixtures/keys.yml file which is gi
 
 The custom errors are defined in api/errors.rb
 
-For making the actual API calls I chose to go with httparty because of familiarity and it is faster than faraday. Although curb is a faster http library, installation of curb is not very platform independent. Therefore, I decided httparty is the best among all options.
+For making the actual API calls I chose to go with httparty as it is faster than faraday. Although curb is a faster http library, installation of curb is not very platform independent. Therefore, I decided httparty is the best among all options.
 
 - Saurabh Sikchi

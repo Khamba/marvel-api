@@ -9,9 +9,9 @@ module Marvel
 
       def initialize(response_hash, raw_client)
         @response_hash, @raw_client = response_hash, raw_client
-        @offset = response_hash['offset'].to_i
-        @limit = response_hash['limit'].to_i
-        @total = response_hash['total'].to_i
+        @offset = response_hash['data']['offset'].to_i
+        @limit = response_hash['data']['limit'].to_i
+        @total = response_hash['data']['total'].to_i
       end
 
       def next
@@ -19,7 +19,7 @@ module Marvel
       end
 
       def prev
-        raw_client.characters(offset: offset+limit)
+        raw_client.characters(offset: offset-limit)
       end
 
       def [](key)
